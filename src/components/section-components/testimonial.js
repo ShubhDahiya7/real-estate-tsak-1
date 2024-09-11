@@ -14,7 +14,7 @@ class Testimonial extends Component {
 
 	componentDidMount() {
 
-   		axios.get('http://localhost:5000/AboutUs/')
+   		axios.get('https://xenonbackend-bh9e.onrender.com/AboutUs/')
    		.then(response => {
 	  	if (response.data) {
 			this.setState({      

@@ -13,7 +13,7 @@ class Gallery extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/Gallery/")
+      .get("https://xenonbackend-bh9e.onrender.com/Gallery/")
       .then((response) => {
         if (response.data) {
           this.setState({

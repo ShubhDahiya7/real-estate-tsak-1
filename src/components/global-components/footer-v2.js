@@ -20,7 +20,7 @@ class Footer_v2 extends Component {
     document.body.appendChild(minscript);
 
     axios
-      .get("http://localhost:5000/ContactUs/")
+      .get("https://xenonbackend-bh9e.onrender.com/ContactUs/")
       .then((response) => {
         if (response.data) {
           this.setState({

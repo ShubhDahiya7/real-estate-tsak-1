@@ -53,7 +53,7 @@ class SignUp extends Component {
     };
 
     axios
-      .post("http://localhost:5000/Admin/register", Admin)
+      .post("https://xenonbackend-bh9e.onrender.com/Admin/register", Admin)
       .then((res) => {
         alert(res.data);
 

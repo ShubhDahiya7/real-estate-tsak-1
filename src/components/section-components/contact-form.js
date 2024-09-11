@@ -16,7 +16,7 @@ class ContactForm extends Component {
     $(".footer-area.style-two").removeClass("mg-top-100");
 
     axios
-      .get("http://localhost:5000/ContactUs/")
+      .get("https://xenonbackend-bh9e.onrender.com/ContactUs/")
       .then((response) => {
         if (response.data) {
           this.setState({

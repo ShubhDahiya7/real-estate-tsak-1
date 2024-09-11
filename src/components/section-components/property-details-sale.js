@@ -16,7 +16,7 @@ const PropertyDetailsSale = () => {
     const getProperty = async () =>
       await axios
         .get(
-          "http://localhost:5000/SalePropertyDetail/property-details-sale/" +
+          "https://xenonbackend-bh9e.onrender.com/SalePropertyDetail/property-details-sale/" +
             data,
           {}
         )

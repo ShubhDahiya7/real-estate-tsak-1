@@ -11,7 +11,7 @@ class PropertyGridForRent extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:5000/RentPropertyDetail/")
+      .get("https://xenonbackend-bh9e.onrender.com/RentPropertyDetail/")
       .then((response) => {
         if (response.data) {
           this.setState({

@@ -26,7 +26,7 @@ class Video extends Component {
 		// 	</div>
   componentDidMount() {
     axios
-      .get("http://localhost:5000/Video/")
+      .get("https://xenonbackend-bh9e.onrender.com/Video/")
       .then((response) => {
         if (response.data) {
           this.setState({
