@@ -74,7 +74,7 @@ export default function SubmitPropertyRequest(props) {
     console.log(property);
     axios
       .post(
-        "http://localhost:4000/SubmittedPropertyRequests/create-propertyRequest",
+        "https://xenonbackend-bh9e.onrender.com/SubmittedPropertyRequests/create-propertyRequest",
         property
       )
       .then((res) => {
