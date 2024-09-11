@@ -9,6 +9,7 @@ class SignUp extends Component {
     super(props);
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
@@ -21,7 +22,6 @@ class SignUp extends Component {
 
   componentDidMount() {
     const $ = window.$;
-
     $("body").addClass("bg-gray");
   }
 
@@ -57,75 +57,76 @@ class SignUp extends Component {
       .then((res) => {
         alert(res.data);
 
-        if (res.data === "Registration Successful"){ 
+        if (res.data === "Registration Successful") { 
             localStorage.setItem('sd-user', Admin.username);
-            window.location = "/"};
+            window.location = "/";
+        }
       })
-      .catch((res) => alert(res.data));
+      .catch((error) => alert("An error occurred: " + error.message));
   }
 
   render() {
     return (
-        <>
+      <>
         <Navbar />
-      <Page_header headertitle="Sign Up" />
-      
-      <div className="signin-page-area pd-top-100 ">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-xl-6 col-lg-7">
-              <form className="signin-inner">
-                <div className="row">
-                  <div className="col-12">
-                    <label className="single-input-inner style-bg-border">
-                      <input
-                        type="text"
-                        placeholder="Username"
-                        value={this.state.username}
-                        onChange={this.onChangeUsername}
-                        required
-                      />
-                    </label>
-                  </div>
+        <Page_header headertitle="Sign Up" />
+        
+        <div className="signin-page-area pd-top-100">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-xl-6 col-lg-7">
+                <form className="signin-inner" onSubmit={this.onSubmit}>
+                  <div className="row">
+                    <div className="col-12">
+                      <label className="single-input-inner style-bg-border">
+                        <input
+                          type="text"
+                          placeholder="Username"
+                          value={this.state.username}
+                          onChange={this.onChangeUsername}
+                          required
+                        />
+                      </label>
+                    </div>
 
-                  <div className="col-12">
-                    <label className="single-input-inner style-bg-border">
-                      <input
-                        type="text"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.onChangeEmail}
-                        required
-                      />
-                    </label>
-                  </div>
+                    <div className="col-12">
+                      <label className="single-input-inner style-bg-border">
+                        <input
+                          type="email"
+                          placeholder="Email"
+                          value={this.state.email}
+                          onChange={this.onChangeEmail}
+                          required
+                        />
+                      </label>
+                    </div>
 
-                  <div className="col-12">
-                    <label className="single-input-inner style-bg-border">
-                      <input
-                        type="text"
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.onChangePassword}
-                        required
-                      />
-                    </label>
+                    <div className="col-12">
+                      <label className="single-input-inner style-bg-border">
+                        <input
+                          type="password"
+                          placeholder="Password"
+                          value={this.state.password}
+                          onChange={this.onChangePassword}
+                          required
+                        />
+                      </label>
+                    </div>
+                    <div className="col-12 mb-4">
+                      <button
+                        className="btn btn-base w-100"
+                        type="submit"
+                      >
+                        Sign Up
+                      </button>
+                    </div>
                   </div>
-                  <div className="col-12 mb-4">
-                    <button
-                      className="btn btn-base w-100"
-                      onClick={this.onSubmit}
-                    >
-                      Sign Up
-                    </button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer_v2 />
+        <Footer_v2 />
       </>
     );
   }
